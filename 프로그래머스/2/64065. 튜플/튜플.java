@@ -23,8 +23,7 @@ class Solution {
             for (int i = 0; i < array.length; i++) {
                 if (array[i].length == len) {
                     for (int j=0; j<array[i].length; j++) {
-                        if (!set.contains(array[i][j])) {
-                            set.add(array[i][j]);
+                        if (set.add(array[i][j])) {
                             answer.add(array[i][j]);
                         }
                     }
