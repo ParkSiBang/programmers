@@ -14,35 +14,14 @@ class Solution {
         //     jinsu = remain + jinsu;
         // }
         String jinsu = Integer.toString(n, k);
-        StringBuilder num = new StringBuilder();
-        for (char c : jinsu.toCharArray()) {
-            if (c == '0') {
-                if (num.length() > 0) { 
-                    long p = Long.parseLong(num.toString());
-                    if (isPrime(p)) {
-                        answer++;
-                    }
-                    num.setLength(0); // 초기화
-                }
-            } else {
-                num.append(c);
-            }
-        }
-        
-        if (num.length() > 0) { // 마지막 숫자 처리
-            long p = Long.parseLong(num.toString());
-            if (isPrime(p)) {
-                answer++;
-            }
-        }
-//         String[] strArr = jinsu.split("0+");
+        String[] strArr = jinsu.split("0+");
 
-//         for (String str : strArr) {
-//             long p = Long.parseLong(str); 
-//             if (isPrime(p)) {
-//                 answer += 1;
-//             }
-//         }
+        for (String str : strArr) {
+            long p = Long.parseLong(str); 
+            if (isPrime(p)) {
+                answer += 1;
+            }
+        }
         
         return answer;
     }
